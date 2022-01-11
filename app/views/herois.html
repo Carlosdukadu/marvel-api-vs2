@@ -1,6 +1,7 @@
 
 <!-- ng-if='mostrarLimparQuadrinhos' -->
-<div  ng-init='pesquisarListaHeroi()' class="father white divQuadrinho">
+<!-- ng-init='pesquisarListaHeroi()' -->
+<div   class="father white divQuadrinho">
     <div class="cardQuadrinho " id='quadrinhosVerMais' ng-repeat="_listaHerois in listaHerois track by $index ">
         <img id="quadrinhoImg" ng-if="quadrinhoImg " ng-src="{{ _listaHerois.img }} " alt="Avatar ">
         <div>
