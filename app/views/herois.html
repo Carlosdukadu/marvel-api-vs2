@@ -1,0 +1,28 @@
+
+<!-- ng-if='mostrarLimparQuadrinhos' -->
+<div  ng-init='pesquisarListaHeroi()' class="father white divQuadrinho">
+    <div class="cardQuadrinho " id='quadrinhosVerMais' ng-repeat="_listaHerois in listaHerois track by $index ">
+        <img id="quadrinhoImg" ng-if="quadrinhoImg " ng-src="{{ _listaHerois.img }} " alt="Avatar ">
+        <div>
+            <a ng-class="{'active': $ctrl.isActive('/ver-mais')}"  href="#!/ver-mais">
+
+                <h5 class="quadrinhoTitle "><b ng-bind="_listaHerois.name" ng-click="pesquisarHeroi(_listaHerois.name); pesquisarQuadrinhos(_listaHerois.id)"> </b></h5>
+            
+            </a>
+            <!-- <p >{{quadrinho.name}}</p> -->
+        </div>
+      
+    </div>
+
+</div>
+
+<!-- <form class='menuSearch'>
+
+    <input class="cursor inputPesquisa " type="text " ng-model="heroi.nome " placeholder="Faça sua Busca " required>
+    <button name="search " id="search " class="btn btn-danger btn-block btn-pesquisar " ng-click="pesquisarHeroi(heroi)">PESQUISAR</button>
+    <button name="clear " id="clear " class="btn btn-warning btn-block btn-limpar " ng-click="limparInput(heroi)">LIMPAR</button>
+    <label class=" " id="naoEncontrado " ng-hide="naoEncontrado">Ops, herói não Encontrado</label
+        class="elementToFadeInAndOut ">
+    <i class="fas fa-search fa-1x "></i>
+
+</form> -->

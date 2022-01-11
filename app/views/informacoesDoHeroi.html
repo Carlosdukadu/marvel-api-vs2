@@ -1,0 +1,40 @@
+
+        <div id="cardMarvel" ng-model="heroiImg ">
+            <!-- ng-if="heroiImg " -->
+            <img id="imgHero"  ng-src="{{heroiImg}} " alt="Avatar ">
+            <div class="heroiName ">
+                <h4><b ng-bind="heroiName"> </b></h4>
+                <!-- <p ng-bind='heroiDesc'></p> -->
+            </div>
+        </div>
+
+
+    
+    <!-- ng-if="mostrarLimparQuadrinhos" -->
+    <!-- Quadrinhos -->
+    <div id='quadrinhos#' >
+        <h2 id='quadrinhos'>DESCRIÇÃO E QUADRINHOS</h2>
+        <div class="descricaoHeroi ">
+            <p ng-bind='heroiDesc'></p>
+        </div>
+    </div>
+
+    <!-- ng-if='mostrarLimparQuadrinhos' -->
+    <div  class="father white ">
+        <div class="cardQuadrinho " id='quadrinhosVerMais' ng-repeat="quadrinho in quadrinhosInfo track by $index ">
+            <!-- ng-if="quadrinhoImg " -->
+            <img id="quadrinhoImg"  ng-src="{{ quadrinho.img }} " alt="Avatar ">
+            <div>
+                <h5 class="quadrinhoTitle "><b ng-bind="quadrinho.title "> </b></h5>
+                <!-- <p >{{quadrinho.name}}</p> -->
+            </div>
+        </div>
+
+    </div>
+    <!-- ng-if="mostrarLimparQuadrinhos" -->
+    <div  class="voltarInicio" >
+        <a href="#characters">
+            <!-- ng-if="heroiImg " -->
+            <button  name="search " id="search " class="btn btn-danger btn-block btn-voltar-inicio ">INICIO</button>
+        </a>
+    </div>
