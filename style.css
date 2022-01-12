@@ -567,6 +567,10 @@ body::-webkit-scrollbar-thumb {
     .voltarInicio {
         margin-bottom: 160px;
     }
+    #naoEncontrado {
+        text-align: center;
+        font-size: 32px;
+    }
 }
 
 @media (min-width:481px) and (max-width:768px) {
