@@ -2,7 +2,7 @@
   "name": "app",
   "version": "1.0.0",
   "description": "Criando rotas com AngularJS",
-  "main": "index.js",
+  "main": "node_modules/angular/angular.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
