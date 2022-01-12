@@ -513,6 +513,7 @@ body::-webkit-scrollbar-thumb {
         height: 80px;
         position: fixed;
         bottom: 0;
+        margin-bottom: 15px;
     }
     #meuHeader {
         height: 109px ;
