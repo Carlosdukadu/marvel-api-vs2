@@ -97,10 +97,17 @@ angular.module("app").controller("marvelApiCtrl", function($scope, $http, $filte
     $scope.init = $scope.pesquisarListaHeroi();
 
 
-
+    $scope.verMaisCarregado = 0
     $scope.pesquisarQuadrinhos = function(quadrinhos) {
+    console.log($scope.quadrinhosInfo.length, '----quadinhor info');
+    if ($scope.quadrinhosInfo.length > 1 ){
+        return
+        
+    }else {
+        $scope.verMaisCarregado = 1
+    }
         console.log(quadrinhos, '----chamou pesquisarQuadrinhos----');
-
+        $scope.limparQuadrinhos()
         const apiKey = '?apikey=e310420c2c151aed139b9a85d557f030';
         const hash = '&hash=c68771660709d8e5655903aba47eab3cedef9768';
         const baseUrl = 'https://gateway.marvel.com:443/v1/public/characters/';
@@ -133,6 +140,7 @@ angular.module("app").controller("marvelApiCtrl", function($scope, $http, $filte
                     $scope.quadrinhoImg = { img: $scope.quadrinhoImg.path + '/portrait_xlarge' + '.' + $scope.quadrinhoImg.extension, title: element.title }
                     $scope.quadrinhosInfo.push($scope.quadrinhoImg)
 
+                    console.log($scope.quadrinhosInfo.length, '----quadinhor info');
                 })
             }, err => {
                 console.log(err);
@@ -157,8 +165,8 @@ angular.module("app").controller("marvelApiCtrl", function($scope, $http, $filte
 
         $scope.mostrarLimparQuadrinhos = false
         $scope.quadrinhosInfo = []
-        $scope.heroiImg = null
-        $scope.heroiName = null
+        // $scope.heroiImg = null
+        // $scope.heroiName = null
     }
 
 });
