@@ -28,18 +28,21 @@
 
 <body ng-controller="marvelApiCtrl">
 
-    <header id='meuHeader'>
-        <div id='logo'>
-            <img src="img/Marvel_Logo.svg.png" alt="marvel_Logo">
-        </div>
+    <header>
+        <div id='meuHeader'>
+            <div id='logo'>
+                <img src="img/Marvel_Logo.svg.png" alt="marvel_Logo">
+            </div>
 
-        <ul id='minhaUl'>
-            <li role="presentation" ng-class="{'active': $ctrl.isActive('/home')}"><a href="#!home"
-                    ng-click="limparQuadrinhos()">Início</a></li>
-            <li role="presentation" ng-class="{'active': $ctrl.isActive('/herois')}"><a href="#!herois">Heróis</a></li>
-        </ul>
-        <i class="fas fa-times " id='botao-2'></i>
-        <i class="fas fa-bars " id='botao'></i>
+            <ul id='minhaUl'>
+                <li role="presentation" class="buttonMenu" ng-class="{'active': $ctrl.isActive('/home')}"><a href="#!home"
+                        ng-click="limparQuadrinhos()">Início</a></li>
+                <li role="presentation" class="buttonMenu" ng-class="{'active': $ctrl.isActive('/herois')}"><a href="#!herois">Heróis</a>
+                </li>
+            </ul>
+            <i class="fas fa-times " id='botao-2'></i>
+            <i class="fas fa-bars " id='botao'></i>
+        </div>
     </header>
 
     <div ng-view=""></div>
