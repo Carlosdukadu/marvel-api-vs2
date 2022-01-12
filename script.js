@@ -107,7 +107,7 @@ angular.module("app").controller("marvelApiCtrl", function($scope, $http, $filte
         });
     };
 
-    $scope.init = $scope.pesquisarListaHeroi();
+    // $scope.init = $scope.pesquisarListaHeroi();
 
 
 
