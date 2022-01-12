@@ -156,9 +156,9 @@ body {
     text-align: center
 }
 
-.cardQuadrinho:hover {
+/* .cardQuadrinho:hover {
     box-shadow: inset 0 0 1em rgba(255, 245, 188, 0.212), 0 0 1em rgba(255, 255, 255, 0.377);
-}
+} */
 
 .quadrinhoTitle {
     flex: 1 1 150px;
@@ -355,6 +355,16 @@ h2 {
     background-color: rgb(255, 81, 81);
 }
 
+.btn-herois {
+    font-size: 14px !important;
+    background-color: #ff1119;
+    width: -webkit-fill-available;
+    text-align: center;
+}
+.btn-herois:hover {
+    background-color: #ff081088;
+}
+
 .btn-primary:hover {
     background-color: rgb(255, 67, 67);
 }
@@ -494,6 +504,17 @@ body::-webkit-scrollbar-thumb {
         font-size: 45px !important;
         width: 705px;
         margin-bottom: 16px;
+    }
+    .btn-herois {
+
+        display: unset;
+        font-size: 45px !important;
+        width: 325px;
+        margin-bottom: 52px;
+        background-color: #ff1119;
+    }
+    .btn-herois:hover {
+        background-color: #ff081088;
     }
     .btn-limpar {
         font-size: 45px !important;

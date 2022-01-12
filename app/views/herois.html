@@ -10,8 +10,10 @@
         <div>
             <a ng-class="{'active': $ctrl.isActive('/ver-mais')}" href="#!/ver-mais">
 
-                <h5 class="quadrinhoTitle "><b ng-bind="_listaHerois.name"
-                        ng-click="pesquisarHeroi(_listaHerois.name); pesquisarQuadrinhos(_listaHerois.id)"> </b></h5>
+                <h5 class="quadrinhoTitle "><button class="btn btn-danger btn-block btn-pesquisar"
+                        ng-bind="_listaHerois.name"
+                        ng-click="pesquisarHeroi(_listaHerois.name); pesquisarQuadrinhos(_listaHerois.id)"> </button>
+                </h5>
 
             </a>
         </div>
