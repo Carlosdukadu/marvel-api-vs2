@@ -513,7 +513,7 @@ body::-webkit-scrollbar-thumb {
     #meuFooter {
         height: 80px;
         position: fixed;
-        bottom: -10px;
+        bottom: -20px;
         margin-bottom: 15px;
     }
     #meuHeader {
@@ -561,7 +561,7 @@ body::-webkit-scrollbar-thumb {
         font-size: 38px;
     }
     #imgHero {
-        width: 430px;
+        width: 400px;
     }
     #cardMarvel {
         width: 716px;
@@ -572,6 +572,10 @@ body::-webkit-scrollbar-thumb {
     #naoEncontrado {
         text-align: center;
         font-size: 32px;
+    }
+    .btn-voltar-inicio {
+        width: 35%;
+        font-size: 38px;
     }
 }
 
