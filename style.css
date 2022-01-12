@@ -506,10 +506,9 @@ body::-webkit-scrollbar-thumb {
         margin-bottom: 16px;
     }
     .btn-herois {
-
-        display: unset;
-        font-size: 45px !important;
-        width: 325px;
+        display: initial;
+        font-size: 27px !important;
+        width: 361px;
         margin-bottom: 52px;
         background-color: #ff1119;
     }
