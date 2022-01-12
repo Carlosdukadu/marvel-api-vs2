@@ -19,7 +19,6 @@
     <script src="app/assets/js/controllers/homeController.js"></script>
     <script src="app/assets/js/controllers/heroisController.js"></script>
     <script src="app/assets/js/controllers/verMaisController.js"></script>
-    <!-- <script src="app/assets/js/controllers/sobreController.js"></script> -->
 
     <script src="app/assets/js/components/headerComponent.js"></script>
     <!--Components-->
@@ -29,14 +28,25 @@
 
 <body ng-controller="marvelApiCtrl">
 
-    <app-header-component></app-header-component>
+    <header id='meuHeader'>
+        <div id='logo'>
+            <img src="img/Marvel_Logo.svg.png" alt="marvel_Logo">
+        </div>
+
+        <ul id='minhaUl'>
+            <li role="presentation" ng-class="{'active': $ctrl.isActive('/home')}"><a href="#!home"
+                    ng-click="limparQuadrinhos()">Início</a></li>
+            <li role="presentation" ng-class="{'active': $ctrl.isActive('/herois')}"><a href="#!herois">Heróis</a></li>
+        </ul>
+        <i class="fas fa-times " id='botao-2'></i>
+        <i class="fas fa-bars " id='botao'></i>
+    </header>
 
     <div ng-view=""></div>
 
     <footer id='meuFooter'>
         <p>Carlos Eduardo </p>
     </footer>
-
 
 </body>
 

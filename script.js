@@ -1,4 +1,3 @@
-// angular.module("app", []);
 angular.module("app").controller("marvelApiCtrl", function($scope, $http, $filter) {
 
     // Arrys utilizados nas funções
@@ -16,16 +15,15 @@ angular.module("app").controller("marvelApiCtrl", function($scope, $http, $filte
     time = $filter('date')(new Date(), "MMM/dd/yyyy HH:mm:ss");
 
     $scope.pesquisarHeroi = function(heroi) {
-        console.log(heroi, '----chamou heroi----');
+
         $scope.limparQuadrinhos()
+        
         if (heroi == undefined) return
 
         heroiName = heroi;
         const apiKey = 'e310420c2c151aed139b9a85d557f030';
         const hash = '02c521fce1d75358d86df112cc3fed32 ';
         const baseUrl = 'https://gateway.marvel.com:443/v1/public/characters?';
-
-
 
         $http({
             url: baseUrl,
@@ -61,34 +59,24 @@ angular.module("app").controller("marvelApiCtrl", function($scope, $http, $filte
     };
 
     $scope.pesquisarListaHeroi = function(heroi) {
-        console.log('----chamou pesquisarListaHeroi----');
-        // if (heroi == undefined) return
 
-        // heroiName = heroi.nome;
         const apiKey = 'e310420c2c151aed139b9a85d557f030';
         const hash = '02c521fce1d75358d86df112cc3fed32 ';
         const baseUrl = 'https://gateway.marvel.com:443/v1/public/characters?';
-
-
 
         $http({
             url: baseUrl,
             method: 'GET',
             params: {
-                // name: heroiName,
                 apikey: apiKey,
                 hash: hash,
             }
         }).then(function(response) {
-            console.log(response,'----response----');
 
             if (response.data.data.total) {} else {
                 $scope.naoEncontrado = false;
             }
             response.data.data.results.forEach((element) => {
-                console.log(element,'----element----');
-
-                // element.id != $scope.heroiId ? $scope.limparQuadrinhos() : '';
 
                 $scope.quadrinhoImg = element.thumbnail
                 $scope.quadrinhoImg = { img: $scope.quadrinhoImg.path + '/portrait_xlarge' + '.' + $scope.quadrinhoImg.extension, title: element.title }
@@ -97,7 +85,6 @@ angular.module("app").controller("marvelApiCtrl", function($scope, $http, $filte
                 $scope.quadrinhoImg = element.thumbnail
                 $scope.quadrinhoImg = { img: $scope.quadrinhoImg.path + '/portrait_xlarge' + '.' + $scope.quadrinhoImg.extension, name: element.name, id: element.id }
                 $scope.listaHerois.push($scope.quadrinhoImg)
-                console.log( $scope.listaHerois,'---- $scope.quadrinhosInfo----');
 
 
             })
@@ -107,7 +94,7 @@ angular.module("app").controller("marvelApiCtrl", function($scope, $http, $filte
         });
     };
 
-    // $scope.init = $scope.pesquisarListaHeroi();
+    $scope.init = $scope.pesquisarListaHeroi();
 
 
 
@@ -117,7 +104,9 @@ angular.module("app").controller("marvelApiCtrl", function($scope, $http, $filte
         const apiKey = '?apikey=e310420c2c151aed139b9a85d557f030';
         const hash = '&hash=c68771660709d8e5655903aba47eab3cedef9768';
         const baseUrl = 'https://gateway.marvel.com:443/v1/public/characters/';
-
+        if (quadrinhos != undefined){
+            $scope.heroiId = quadrinhos
+        }
         $http.get(baseUrl + $scope.heroiId + apiKey + hash)
             .then(function(response) {
 
@@ -152,7 +141,10 @@ angular.module("app").controller("marvelApiCtrl", function($scope, $http, $filte
     };
 
     $scope.limparInput = function(heroi) {
-        heroi.nome = null
+        console.log(heroi, '----LIMPARiNPUT---');
+        heroi == undefined ? '':  heroi.nome = null
+
+        // heroi.nome = null
         $scope.heroiImg = null
         $scope.heroiName = null
         $scope.heroiDesc = null
@@ -160,9 +152,13 @@ angular.module("app").controller("marvelApiCtrl", function($scope, $http, $filte
         $scope.mostrarLimparQuadrinhos = false
         $scope.quadrinhosInfo = []
     }
-    $scope.limparQuadrinhos = function(heroi) {
+    $scope.limparQuadrinhos = function() {
+        console.log( '----limpou---');
+
         $scope.mostrarLimparQuadrinhos = false
         $scope.quadrinhosInfo = []
+        $scope.heroiImg = null
+        $scope.heroiName = null
     }
 
 });
